@@ -38,7 +38,7 @@ class GameScene: SKScene {
         bird.physicsBody = SKPhysicsBody(circleOfRadius: birdTexture.size().height / 16)
         bird.physicsBody?.affectedByGravity = true
         bird.physicsBody?.isDynamic = true
-        bird.physicsBody?.mass = 0.5
+        bird.physicsBody?.mass = 0.15
         
         // Box
         
@@ -47,7 +47,7 @@ class GameScene: SKScene {
         let size =  CGSize(width: boxTexture.size().width / 6.5, height: boxTexture.size().height / 6.5)
         box1 = childNode(withName: "box1") as! SKSpriteNode
         box1.physicsBody = SKPhysicsBody(rectangleOf: size)
-        box1.physicsBody?.affectedByGravity = true
+        box1.physicsBody?.affectedByGravity = false
         box1.physicsBody?.isDynamic = true
         box1.physicsBody?.allowsRotation = true
         box1.physicsBody?.mass = 0.5
@@ -104,7 +104,8 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        bird.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 100))
+        box1.physicsBody?.affectedByGravity = true
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
