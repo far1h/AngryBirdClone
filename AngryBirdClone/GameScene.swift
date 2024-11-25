@@ -16,7 +16,6 @@ class GameScene: SKScene {
     var box3 = SKSpriteNode()
     var box4 = SKSpriteNode()
     var box5 = SKSpriteNode()
-    var box6 = SKSpriteNode()
     
     var isGameStarted = false
     var originalPosition: CGPoint?
@@ -51,7 +50,7 @@ class GameScene: SKScene {
         let size =  CGSize(width: boxTexture.size().width / 6.5, height: boxTexture.size().height / 6.5)
         box1 = childNode(withName: "box1") as! SKSpriteNode
         box1.physicsBody = SKPhysicsBody(rectangleOf: size)
-        box1.physicsBody?.affectedByGravity = false
+        box1.physicsBody?.affectedByGravity = true
         box1.physicsBody?.isDynamic = true
         box1.physicsBody?.allowsRotation = true
         box1.physicsBody?.mass = 0.5
@@ -83,13 +82,6 @@ class GameScene: SKScene {
         box5.physicsBody?.isDynamic = true
         box5.physicsBody?.allowsRotation = true
         box5.physicsBody?.mass = 0.5
-        
-        box6 = childNode(withName: "box6") as! SKSpriteNode
-        box6.physicsBody = SKPhysicsBody(rectangleOf: size)
-        box6.physicsBody?.affectedByGravity = true
-        box6.physicsBody?.isDynamic = true
-        box6.physicsBody?.allowsRotation = true
-        box6.physicsBody?.mass = 0.5
         
         
     }
