@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var box6 = SKSpriteNode()
     
     var isGameStarted = false
+    var originalPosition: CGPoint?
     
     override func didMove(to view: SKView) {
         
@@ -41,6 +42,7 @@ class GameScene: SKScene {
         bird.physicsBody?.affectedByGravity = false
         bird.physicsBody?.isDynamic = true
         bird.physicsBody?.mass = 0.15
+        originalPosition = bird.position
         
         // Box
         
@@ -148,7 +150,30 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if isGameStarted == false {
+            if let touch = touches.first {
+                let touchLocation = touch.location(in: self)
+                let touchNodes = nodes(at: touchLocation)
+                
+                if touchNodes.isEmpty == false {
+                    for node in touchNodes{
+                        if let sprite = node as? SKSpriteNode {
+                            if sprite == bird {
+                                let dx = -(touchLocation.x - originalPosition!.x)
+                                let dy = -(touchLocation.y - originalPosition!.y)
+                                
+                                let impulse = CGVector(dx: dx, dy: dy)
+                                
+                                bird.physicsBody?.applyImpulse(impulse)
+                                bird.physicsBody?.affectedByGravity = true
+                                
+                                isGameStarted = true
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
