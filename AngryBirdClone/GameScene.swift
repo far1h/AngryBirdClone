@@ -213,7 +213,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Called before each frame is rendered
         
         if let birdPhysicsBody = bird.physicsBody {
-            if birdPhysicsBody.velocity.dx <= 0.1 && birdPhysicsBody.velocity.dy <= 0.1 && birdPhysicsBody.angularVelocity <= 0.1 && isGameStarted {
+            if birdPhysicsBody.velocity.dx <= 0.3 && birdPhysicsBody.velocity.dy <= 0.3 && birdPhysicsBody.angularVelocity <= 0.3 && isGameStarted {
                 bird.physicsBody?.affectedByGravity = false
                 bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 bird.physicsBody?.angularVelocity = 0
