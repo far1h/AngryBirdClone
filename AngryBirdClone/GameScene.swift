@@ -63,7 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box1.physicsBody?.affectedByGravity = true
         box1.physicsBody?.isDynamic = true
         box1.physicsBody?.allowsRotation = true
-        box1.physicsBody?.mass = 0.5
+        box1.physicsBody?.mass = 0.4
         
         box1.physicsBody?.collisionBitMask = ColliderType.Bird.rawValue
         
@@ -72,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box2.physicsBody?.affectedByGravity = true
         box2.physicsBody?.isDynamic = true
         box2.physicsBody?.allowsRotation = true
-        box2.physicsBody?.mass = 0.5
+        box2.physicsBody?.mass = 0.4
         
         box2.physicsBody?.collisionBitMask = ColliderType.Bird.rawValue
         
@@ -81,7 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box3.physicsBody?.affectedByGravity = true
         box3.physicsBody?.isDynamic = true
         box3.physicsBody?.allowsRotation = true
-        box3.physicsBody?.mass = 0.5
+        box3.physicsBody?.mass = 0.4
         
         box3.physicsBody?.collisionBitMask = ColliderType.Bird.rawValue
         
@@ -90,7 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box4.physicsBody?.affectedByGravity = true
         box4.physicsBody?.isDynamic = true
         box4.physicsBody?.allowsRotation = true
-        box4.physicsBody?.mass = 0.5
+        box4.physicsBody?.mass = 0.4
         
         box4.physicsBody?.collisionBitMask = ColliderType.Bird.rawValue
 
@@ -99,7 +99,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box5.physicsBody?.affectedByGravity = true
         box5.physicsBody?.isDynamic = true
         box5.physicsBody?.allowsRotation = true
-        box5.physicsBody?.mass = 0.5
+        box5.physicsBody?.mass = 0.4
         
         box5.physicsBody?.collisionBitMask = ColliderType.Bird.rawValue
         
